@@ -7,15 +7,14 @@ const JobPositionTableWrap = styled.div`
   width: 100%;
   min-width: 300px;
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0 auto 30px auto;
   box-sizing: border-box;
 `;
 // 탑3 타이틀
 const JobPositionTitle = styled.h1`
-  font-weight: 800;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 auto 14px auto;
   color: #111827;
 `;
 // 탑3 리스트
@@ -34,11 +33,13 @@ const JobItem = styled.li`
   &:last-child {
     border-bottom: none;
   }
+
   .job-info {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
+
   .job-names {
     display: flex;
     flex-wrap: wrap;
@@ -47,16 +48,37 @@ const JobItem = styled.li`
       margin-right: 5px;
     }
   }
+
   .job-rank {
     display: flex;
     align-items: center;
     margin-right: 10px;
   }
+
   span {
     color: #585858;
     font-weight: 400;
   }
 `;
+
+const JobNames = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @media only screen and (max-width: 450px) {
+    max-width: 200px;
+  }
+  span {
+    margin-right: 5px;
+    font-weight: 400;
+    color: #111827;
+    line-height: 1.4;
+  }
+`;
+
 const JobItemNumber = styled.div`
   display: flex;
   align-items: center;
@@ -71,6 +93,7 @@ const JobItemNumber = styled.div`
     align-items: center;
     margin-right: 10px;
     span {
+      font-size: 17px;
       font-weight: 700;
       color: #5a6afb;
     }
@@ -79,23 +102,7 @@ const JobItemNumber = styled.div`
     }
   }
 `;
-const JobNames = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  @media only screen and (max-width: 450px) {
-    max-width: 200px;
-  }
-  span {
-    margin-right: 5px;
-    font-weight: 700;
-    color: #111827;
-    line-height: 1.4;
-  }
-`;
+
 // 순위에 직군이 2개 이상일때 더보기 버튼
 const MoreButton = styled.button`
   background: none;
