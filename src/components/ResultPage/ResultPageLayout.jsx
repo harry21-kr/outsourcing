@@ -2,13 +2,21 @@ import styled from 'styled-components';
 import "../../asset/font/pretendardvariable.css";
 import imagePath from '../../asset/images/programming.png';
 import { Button } from '../../asset/button/Button';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function ResultPageLayout() {
+  const location = useLocation();
+  const {result} = location.state;
+  const navigate = useNavigate();
+
+  function handleRetakeTest() {
+    navigate('/Survey'); // 설문조사 페이지로 이동
+  }
   return (
     <Wrap>
       <Title>
         <T28>입사를 축하합니다! 당신의 직군은</T28>
-        <T48b>프론트엔드 개발자</T48b>
+        <T48b>{ result }</T48b>
         <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
       </Title>
       <TitleImg src={imagePath} />
@@ -24,9 +32,9 @@ export default function ResultPageLayout() {
         당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
         인터페이스의 권위자 입니다
         <ul>
-          <li>프론트엔드는 이런일을해요1</li>
-          <li>프론트엔드는 이런일을해요2</li>
-          <li>프론트엔드는 이런일을해요3</li>
+          <li>{result} (멘트 추가)</li>
+          <li>{result} (멘트 추가)</li>
+          <li>{result} (멘트 추가)</li>
         </ul>
       </T20>
       </Section>
@@ -42,7 +50,7 @@ export default function ResultPageLayout() {
       </Section>
       <Section>
         <Button variant="fill">결과 공유하기</Button>
-        <Button > 테스트 다시하기 </Button>
+        <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
     </Wrap>
   );

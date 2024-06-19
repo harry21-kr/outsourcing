@@ -1,5 +1,5 @@
 import { Container, Content, ImageContainer, MainImage, TextContainer, TestButton } from './HomePageLayout.style';
-import mainImage from '../../../public/main.png';
+import mainImage from '../../../src/asset/images/main.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function HomePageLayout() {
