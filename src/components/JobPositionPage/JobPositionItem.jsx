@@ -1,10 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function JobPositionItem({ item }) {
-  const { title, label, summary } = item;
+  const { title, label, summary, position } = item;
+
+  const navigate = useNavigate();
+
+  const handleMoveDetailPage = () => {
+    navigate(`/job-position/${position}`);
+  };
 
   return (
-    <ItemWrapper>
+    <ItemWrapper onClick={handleMoveDetailPage}>
       <img width={120} height={120} alt="사진" style={{ background: 'black' }} />
       <ItemTextWrapper>
         <ItemLabelText>{label}</ItemLabelText>

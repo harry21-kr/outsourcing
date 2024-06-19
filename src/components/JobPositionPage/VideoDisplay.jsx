@@ -1,16 +1,17 @@
 import YouTube from 'react-youtube';
 
-function VideoDisplay({ videoId }) {
+function VideoDisplay({ videoId, width, height }) {
   return (
     <>
       <YouTube
         videoId={videoId}
         opts={{
           playerVars: {
-            autoplay: 1,
             rel: 0,
             modestbranding: 1
-          }
+          },
+          width,
+          height
         }}
         onEnd={(e) => {
           e.target.stopVideo(0);
