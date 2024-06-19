@@ -149,7 +149,7 @@ function PercentageTable({ jobPositions, isLoading }) {
   });
   return (
     <JobPositionTableWrap>
-      <JobPositionTitle>가장 많이 나온 직군 탑 3</JobPositionTitle>
+      <JobPositionTitle>가장 많이 나온 직군 TOP 3</JobPositionTitle>
       <JobPositionRanking>
         {isLoading
           ? Array.from({ length: 3 }, (_, index) => (
