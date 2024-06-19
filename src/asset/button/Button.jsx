@@ -39,7 +39,7 @@ const baseStyles = css`
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: 18px;
+  border-radius: 16px;
   font-size: 22px;
   font-family: 'Pretendard';
   font-weight: 600;
@@ -53,6 +53,7 @@ const variantStyles = {
     background-color: var(--color-secondary);
     color: #5A6AFB; 
     border: 2px solid #8b97ff;
+    height: 70px;
     font-weight: bold;
     &:hover {
       background-color: #dadeff;
@@ -60,6 +61,7 @@ const variantStyles = {
   `,
   fill: css`
       background-color: #5A6AFB;
+      height: 70px;
       border: none;
     color: #ffffff;
     &:hover {
@@ -69,7 +71,7 @@ const variantStyles = {
   `,
   choice: css`
   background-color: #ffffff;
-    height: 64px;
+    height: 66px;
     color: #5A6AFB; 
     padding-left: 40px; 
     display: flex;
@@ -85,7 +87,6 @@ const variantStyles = {
 
 const sizeStyles = {
   default: css`
-    height: 70px;
     width: 520px;
     padding: 10px 24px;
   `

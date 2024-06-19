@@ -12,7 +12,7 @@ export default function SurveyPageLayout() {
   return (
     <Wrap>
       <ProgressArea>
-      <T26>{progressValue}</T26>
+      <T24>{progressValue}</T24>
         <StyledProgress max="10" value={progressValue}  className="bar-progress"></StyledProgress>
         </ProgressArea>
       <T36>
@@ -65,10 +65,10 @@ const StyledProgress = styled.progress`
   }
 `;
 
-const T26 = styled.span`
+const T24 = styled.span`
   display: block;
   font-family: 'Pretendard';
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
   color: #5A6AFB;
 `;
@@ -87,9 +87,11 @@ const T36 = styled.span`
 const PointNumber = styled.span`
 width: 26px;
 height: 26px;
-font-size: 20px;
+font-size: 18px;
 background-color: #E1E4FE;
 border-radius: 30px;
-text-align: center;
-margin-right: 12px;
+margin-right: 14px;
+display: flex;
+  align-items: center;
+  justify-content: center;
 `;
