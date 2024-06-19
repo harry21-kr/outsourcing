@@ -1,19 +1,21 @@
 import { styled } from 'styled-components';
+import "../../asset/font/pretendardvariable.css"
 
 export default function ResultPageLayout() {
   return (
     <Wrap>
     <Title>
-  <FontH4>입사를 축하합니다! 당신의 직군은</FontH4>
-  <FontH1>프론트엔드 개발자</FontH1>
-    <div>당신은 사용자 인터페이스의 권위자 입니다</div>
+  <T20>입사를 축하합니다! 당신의 직군은</T20>
+  <T48b>프론트엔드 개발자</T48b>
     </Title>
     <TitleImg></TitleImg>
-    <FontH5>당신은 사용자 인터페이스의 권위자 입니다</FontH5>
-    <FontLetters>
+    <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
+    <T20>
     당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
 당신은 사용자 인터페이스의 권위자 입니다
-    </FontLetters>
+    </T20>
+
+    <div>아무글이나 써도 프리텐다드로 나오는지????</div>
     </Wrap>
   );
 }
@@ -47,36 +49,61 @@ const Title = styled.div`
   
 `
 
-//폰트  letters
 
 const TitleImg = styled.image`
       box-sizing: border-box;
     height: auto;
     max-width: 100%;
-    vertical-align: bottom
+    vertical-align: bottom;
 `
+//폰트  letters
 
-const FontLetters = styled.p`
+const T48b = styled.text`
+  font-family: 'Pretendard';
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+`;
+const T36 = styled.text`
+  font-family: 'Pretendard';
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+`;
+
+const T28 = styled.text`
+  font-family: 'Pretendard';
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+`;
+
+const T26 = styled.text`
+  font-family: 'Pretendard';
+  font-size: 26px;
+  font-weight: 800;
+  color: #222;
+`;
+
+
+const T22 = styled.text`
+  font-family: 'Pretendard';
+  font-size: 36px;
+  font-weight: 800;
+  color: #222;
+`;
+
+
+const T20 = styled.text`
+  font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 300;
   color: #333;
 `;
-const FontH5 = styled.h5`
-  font-size: 30px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
-`;
-const FontH4 = styled.h4`
-  font-size: 24px;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 20px;
-`;
 
-const FontH1 = styled.h1`
-  font-size: 36px;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
+const T18 = styled.text`
+  font-family: 'Pretendard';
+  font-size: 18px;
+  font-weight: 200;
+  color: #333;
 `;
