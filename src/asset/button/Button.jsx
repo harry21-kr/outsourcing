@@ -43,7 +43,7 @@ const baseStyles = css`
   font-size: 24px;
   font-family: 'Pretendard';
   font-weight: 600;
-  color: #5A6AFB; /* 글자 색상 변경 */
+  color: #5A6AFB; 
   border: 2px solid #8b97ff;
   transition: 0.15s ease-in-out;
 `;
@@ -51,7 +51,7 @@ const baseStyles = css`
 const variantStyles = {
   default: css`
     background-color: var(--color-secondary);
-    color: #5A6AFB; /* 글자 색상 변경 */
+    color: #5A6AFB; 
     border: 2px solid #8b97ff;
     font-weight: bold;
     &:hover {

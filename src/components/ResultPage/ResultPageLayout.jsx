@@ -42,6 +42,7 @@ export default function ResultPageLayout() {
       </Section>
       <Section>
         <Button variant="fill">결과 공유하기</Button>
+        <Button > 카카오톡으로 공유하기 </Button>
         <Button > 테스트 다시하기 </Button>
       </Section>
     </Wrap>
@@ -119,7 +120,7 @@ const T28 = styled.span`
   font-family: 'Pretendard';
   font-size: 28px;
   font-weight: 700;
-  color: #222;
+  color: #111827;
   margin-bottom: 14px;
 `;
 
@@ -128,7 +129,7 @@ const T26 = styled.span`
   font-family: 'Pretendard';
   font-size: 26px;
   font-weight: 700;
-  color: #222;
+  color: #111827;
 `;
 
 const T22 = styled.span`
@@ -136,7 +137,7 @@ const T22 = styled.span`
   font-family: 'Pretendard';
   font-size: 22px;
   font-weight: 800;
-  color: #222;
+  color: #111827;
 `;
 
 const T20 = styled.span`
@@ -144,7 +145,7 @@ const T20 = styled.span`
   font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 300;
-  color: #333;
+  color: #4B5563;
 `;
 
 const T18 = styled.span`
@@ -152,5 +153,5 @@ const T18 = styled.span`
   font-family: 'Pretendard';
   font-size: 18px;
   font-weight: 200;
-  color: #333;
+  color: #A5A5A5;
 `;
