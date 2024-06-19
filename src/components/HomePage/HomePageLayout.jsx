@@ -1,3 +1,4 @@
 export default function HomePageLayout() {
-  return <div>HomePageLayout</div>;
+  return <div>HomePageLayout
+  </div>;
 }

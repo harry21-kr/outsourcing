@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { colors } from '@/styles/constants';
-import { darkenHex, hexToRGB } from '@/styles/utils';
+import "../../asset/font/pretendardvariable.css";
 
 const Button = forwardRef(
   (
@@ -40,33 +39,41 @@ const baseStyles = css`
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  border-radius: 18px;
+  font-size: 24px;
+  font-family: 'Pretendard';
+  font-weight: 600;
+  color: #5A6AFB; /* 글자 색상 변경 */
+  border: 2px solid #8b97ff;
   transition: 0.15s ease-in-out;
 `;
 
 const variantStyles = {
   default: css`
-    background-color: var(--color-primary);
-    color: var(--color-primary-foreground);
-    &:hover {
-      background-color: ${hexToRGB(colors.primary, 0.9)};
-    }
-  `,
-  secondary: css`
     background-color: var(--color-secondary);
-    color: var(--color-secondary-foreground);
+    color: #5A6AFB; /* 글자 색상 변경 */
+    border: 2px solid #8b97ff;
     font-weight: bold;
     &:hover {
-      background-color: ${darkenHex(colors.secondary, 10)};
+      background-color: #dadeff;
+    }
+  `,
+  fill: css`
+      background-color: #5A6AFB;
+      border: none;
+    color: #ffffff;
+    &:hover {
+      background-color: #4956cb;
+
+
     }
   `
 };
 
 const sizeStyles = {
   default: css`
-    height: 40px;
+    height: 76px;
+    width: 520px;
     padding: 10px 24px;
   `,
   medium: css`

@@ -6,10 +6,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    font-family: "Pretendard", "Helvetica", "Arial", sans-serif;
-    line-height: 1.5;
-  }
 
   h2, p {
     margin: 0;
@@ -19,11 +15,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
   }
 
-  p {
-    font-family: 'Pretendard';
+  body {
+    font-family: "Pretendard", "Helvetica", "Arial", sans-serif;;
   font-size: 20px;
-  font-weight: 300;
-  color: #333;
+  font-weight: 400;
+  line-height: 148%;
+  color: #4B5563;
+  letter-spacing : -0.4px;
   }
 `;
 
