@@ -1,3 +1,11 @@
-export default function ResultPageLayout() {
-  return <div>ResultPageLayout</div>;
+import PercentageTable from './PercentageTable';
+
+function ResultPageLayout({ jobPositions, isLoading }) {
+  return (
+    <div>
+      <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
+    </div>
+  );
 }
+
+export default ResultPageLayout;
