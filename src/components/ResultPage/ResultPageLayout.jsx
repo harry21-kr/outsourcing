@@ -36,10 +36,8 @@ export default function ResultPageLayout() {
       <iframe width="520" height="285" src="https://www.youtube.com/embed/ceJMyCfYuwc?si=YfM3oO2emdozNLLn" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </Section>
 
-      <Section>
-      <T28>가장 많이 나온 직업 TOP3</T28>
-      
-      </Section>
+      <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
+        
       <Section>
         <Button variant="fill">결과 공유하기</Button>
         <Button > 테스트 다시하기 </Button>
