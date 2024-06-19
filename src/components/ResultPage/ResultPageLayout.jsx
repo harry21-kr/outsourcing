@@ -42,11 +42,14 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
         ></iframe>
       </Section>
 
-      <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
+      <PercentageTable style={{marginBottom:"40px"}} jobPositions={jobPositions} isLoading={isLoading} />
 
       <Section>
-        <Button variant="fill">결과 공유하기</Button>
-        <Button > 카카오톡으로 공유하기 </Button>
+        <Button 
+        variant="fill" 
+        style={{marginBottom:"10px"}}
+        >결과 공유하기</Button>
+        <Button style={{marginBottom:"10px"}}> 카카오톡으로 공유하기 </Button>
         <Button > 테스트 다시하기 </Button>
       </Section>
     </Wrap>
@@ -70,7 +73,7 @@ const Wrap = styled.main`
 
 const Section = styled.div`
   margin: 0 auto;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
   display: block;
 `;
 

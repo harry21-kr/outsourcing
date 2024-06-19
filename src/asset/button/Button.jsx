@@ -40,7 +40,7 @@ const baseStyles = css`
   justify-content: center;
   white-space: nowrap;
   border-radius: 18px;
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'Pretendard';
   font-weight: 600;
   color: #5A6AFB; 
@@ -65,21 +65,29 @@ const variantStyles = {
     &:hover {
       background-color: #4956cb;
 
+    }
+  `,
+  choice: css`
+  background-color: #ffffff;
+    height: 64px;
+    color: #5A6AFB; 
+    padding-left: 40px; 
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    &:hover {
+      background-color: #dadeff;
 
     }
+    margin: 6px 0;
   `
 };
 
 const sizeStyles = {
   default: css`
-    height: 76px;
+    height: 70px;
     width: 520px;
     padding: 10px 24px;
-  `,
-  medium: css`
-    height: 48px;
-    padding: 12px 24px;
-    font-size: 15px;
   `
 };
 
