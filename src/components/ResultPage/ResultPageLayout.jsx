@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import "../../asset/font/pretendardvariable.css";
-import imagePath from '../../asset/images/programming.png';
 import { Button } from '../../asset/button/Button';
+import '../../asset/font/pretendardvariable.css';
+import imagePath from '../../asset/images/programming.png';
+import PercentageTable from './PercentageTable';
 
-export default function ResultPageLayout() {
+export default function ResultPageLayout({ jobPositions, isLoading }) {
   return (
     <Wrap>
       <Title>
@@ -12,35 +13,40 @@ export default function ResultPageLayout() {
         <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
       </Title>
       <TitleImg src={imagePath} />
-      
+
       <Section>
-      <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
-      <T20>
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 
-        사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자
-         입니다
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
-        인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
-        인터페이스의 권위자 입니다
-        <ul>
-          <li>프론트엔드는 이런일을해요1</li>
-          <li>프론트엔드는 이런일을해요2</li>
-          <li>프론트엔드는 이런일을해요3</li>
-        </ul>
-      </T20>
+        <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
+        <T20>
+          당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의
+          권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자
+          인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
+          <ul>
+            <li>프론트엔드는 이런일을해요1</li>
+            <li>프론트엔드는 이런일을해요2</li>
+            <li>프론트엔드는 이런일을해요3</li>
+          </ul>
+        </T20>
       </Section>
 
       <Section>
-      <T28>영상으로 보는 직업</T28>
-      <iframe width="520" height="285" src="https://www.youtube.com/embed/ceJMyCfYuwc?si=YfM3oO2emdozNLLn" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <T28>영상으로 보는 직업</T28>
+        <iframe
+          width="520"
+          height="285"
+          src="https://www.youtube.com/embed/ceJMyCfYuwc?si=YfM3oO2emdozNLLn"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </Section>
 
       <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
-        
+
       <Section>
         <Button variant="fill">결과 공유하기</Button>
-        <Button > 테스트 다시하기 </Button>
+        <Button> 테스트 다시하기 </Button>
       </Section>
     </Wrap>
   );
@@ -85,19 +91,16 @@ const TitleImg = styled.img`
   margin-bottom: 70px;
 `;
 
-
 //버튼
 
 const BtnMiddleFill = styled.img`
   max-width: 520px;
   height: 76px;
-  
 `;
-
 
 //폰트 > 나중에 정리 하여 컴포넌트화 or 글로벌스타일 의논하여 상의
 const T48b = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 48px;
   font-weight: 800;
@@ -105,7 +108,7 @@ const T48b = styled.span`
 `;
 
 const T36 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 36px;
   font-weight: 400;
@@ -113,7 +116,7 @@ const T36 = styled.span`
 `;
 
 const T28 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 28px;
   font-weight: 700;
@@ -122,7 +125,7 @@ const T28 = styled.span`
 `;
 
 const T26 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 26px;
   font-weight: 700;
@@ -130,7 +133,7 @@ const T26 = styled.span`
 `;
 
 const T22 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 22px;
   font-weight: 800;
@@ -138,7 +141,7 @@ const T22 = styled.span`
 `;
 
 const T20 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 300;
@@ -146,7 +149,7 @@ const T20 = styled.span`
 `;
 
 const T18 = styled.span`
- display: block;
+  display: block;
   font-family: 'Pretendard';
   font-size: 18px;
   font-weight: 200;
