@@ -4,8 +4,7 @@
 
 ## 데모 📸
 
-
-![제목을-입력해주세요_-001 (2)](https://github.com/harry21-kr/outsourcing/assets/71476841/e8504754-8416-4680-90ea-7fadd2300525)
+![목업이미지](https://github.com/harry21-kr/outsourcing/assets/71476841/abca4828-8358-4649-a3a2-391cdf203e89)
 
 
 ## 소개 ✨
