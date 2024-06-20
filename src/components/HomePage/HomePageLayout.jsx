@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import programming from '../../../src/asset/images/programming.png';
+import programming from '../../../public/images/programming.png';
 import { Button } from '../../asset/button/Button';
 import { Content, ImageContainer, MainImage, TextContainer } from './HomePageLayout.style';
 

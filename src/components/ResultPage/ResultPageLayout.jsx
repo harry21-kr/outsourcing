@@ -1,8 +1,10 @@
+import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../../asset/button/Button';
 import '../../asset/font/pretendardvariable.css';
-import imagePath from '../../asset/images/programming.png';
+import { JOB_POSITION } from '../../constants';
+import Comment from '../Comment/Comment';
 import PercentageTable from './PercentageTable';
 import SharePage from './SharePage';
 
@@ -15,27 +17,22 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
     navigate('/Survey');
   }
 
+  const { title, highlight, detail, imgUrl, videoId } = useMemo(
+    () => JOB_POSITION.filter((v) => v.position === result)[0],
+    [result]
+  );
+
   return (
     <>
       <Title>
         <T26>입사를 축하합니다! 당신의 직군은</T26>
-        <T48b>{result}</T48b>
-        <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
+        <T48b>{title}</T48b>
+        <T20>{highlight}</T20>
       </Title>
-      <TitleImg src={imagePath} />
+      <TitleImg src={imgUrl} />
 
       <Section>
-        <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
-        <T20>
-          당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의
-          권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자
-          인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
-          <ul>
-            <li>{result} (멘트 추가)</li>
-            <li>{result} (멘트 추가)</li>
-            <li>{result} (멘트 추가)</li>
-          </ul>
-        </T20>
+        <T20>{detail}</T20>
       </Section>
 
       <Section>
@@ -58,6 +55,8 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
         <SharePage />
         <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
+
+      <Comment />
     </>
   );
 }

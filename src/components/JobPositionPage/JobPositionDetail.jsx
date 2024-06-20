@@ -2,12 +2,13 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { JOB_POSITION } from '../../constants';
+import Comment from '../Comment/Comment';
 import VideoDisplay from './VideoDisplay';
 
 export default function JobPositionDetail() {
   const params = useParams();
 
-  const { title, highlight, summary, detail, imgUrl, videoId } = useMemo(
+  const { title, highlight, detail, imgUrl, videoId } = useMemo(
     () => JOB_POSITION.filter((v) => v.position === params.position)[0],
     [params.position]
   );
@@ -17,12 +18,12 @@ export default function JobPositionDetail() {
       <TitleText>{title}</TitleText>
       <HighlightText>{highlight}</HighlightText>
       <PositionImage src={imgUrl} width={412} height={410} />
-      <SummaryText>{summary}</SummaryText>
       <DetailText>{detail}</DetailText>
       <PositionVideoText>영상으로 보는 직업</PositionVideoText>
       <PositionVideoWrapper>
         <VideoDisplay videoId={videoId} width="100%" height="285px" />
       </PositionVideoWrapper>
+      <Comment />
     </>
   );
 }
@@ -77,7 +78,5 @@ const PositionVideoWrapper = styled.div`
 `;
 
 const PositionImage = styled.img`
-  background: black;
-
   margin-bottom: 80px;
 `;

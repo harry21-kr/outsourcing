@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import LogoSvg from '../../asset/images/logo.svg';
+import LogoSvg from '../../../public/images/logo.svg';
 import SideBar from './SideBar';
 
 const Header = () => {
