@@ -6,7 +6,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Arial, sans-serif';
+  justify-content: center;
+  margin-left: -20px;
 `;
 
 export const Content = styled.main`

@@ -1,4 +1,4 @@
-import { Container, Content, StyledToastContainer, SuccessIcon, ErrorIcon } from './SharePage.style';
+import { Container, Content, SuccessIcon, ErrorIcon } from './SharePage.style';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -43,8 +43,8 @@ export default function SharePage() {
       Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-          title: 'IT직군 적합테스트',
-          description: '나에게 맞는 직군은?!',
+          title: 'IT핏',
+          description: '나에게 맞는 IT직군은?!',
           imageUrl: 'https://ifh.cc/g/YqwJFL.png',
           link: {
             mobileWebUrl: window.location.href,
@@ -53,7 +53,7 @@ export default function SharePage() {
         },
         buttons: [
           {
-            title: '나도 테스트하러 가기',
+            title: '테스트하러 가기 :)',
             link: {
               mobileWebUrl: window.location.href,
               webUrl: window.location.href
@@ -82,7 +82,6 @@ export default function SharePage() {
           </Button>
         </Content>
       </Container>
-      <StyledToastContainer autoClose={3000} />
     </>
   );
 }

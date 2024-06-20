@@ -67,10 +67,9 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
       </Section>
 
       <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
-      <SharePage />
 
       <Section>
-        {/* <Button variant="fill">결과 공유하기</Button> */}
+        <SharePage />
         <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
     </Wrap>
