@@ -36,7 +36,7 @@ export const SubTitle = styled.p`
 `;
 
 export const ImageContainer = styled.div`
-  margin: 20px 0;
+  margin-bottom: 40px;
 `;
 
 export const MainImage = styled.img`
@@ -60,6 +60,8 @@ export const TextContainer = styled.div`
   p {
     font-size: 1rem;
     color: #555;
+    margin-top: 24px;
+    margin-bottom: 60px;
   }
 `;
 
