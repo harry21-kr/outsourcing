@@ -8,8 +8,9 @@ import SharePage from './SharePage';
 
 export default function ResultPageLayout({ jobPositions, isLoading }) {
   const location = useLocation();
-  const { result } = location.state;
+  const result = location.state?.result||'프론트엔드 개발자'; // 임시로 '프론트엔드 개발자' 로 설정 
   const navigate = useNavigate();
+ 
 
   function handleRetakeTest() {
     navigate('/Survey');

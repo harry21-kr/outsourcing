@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import supabaseClient from '../../supabase/supabaseClient'; // Supabase 클라이언트 가져오기
+import supabaseClient from '../../supabase/supabaseClient'; 
 import { Button } from '../../asset/button/Button';
 
 function SurveyPageLayout() {
@@ -185,6 +185,7 @@ const Progress = styled.div`
   height: 100%;
   border-radius: 20px;
   background-color: #5A6AFB;
+  transition: width 0.5s ease-in-out;
 `;
 
 const Header = styled.div`
