@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { JOB_POSITION } from '../../constants';
-import Comment from '../Comment/Comment';
 import VideoDisplay from './VideoDisplay';
 
 export default function JobPositionDetail() {
@@ -24,7 +23,6 @@ export default function JobPositionDetail() {
       <PositionVideoWrapper>
         <VideoDisplay videoId={videoId} width="100%" height="285px" />
       </PositionVideoWrapper>
-      <Comment />
     </Wrap>
   );
 }
