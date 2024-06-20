@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import supabaseClient from '../../supabase/supabaseClient'; 
 import { Button } from '../../asset/button/Button';
+import supabaseClient from '../../supabase/supabaseClient';
 
 function SurveyPageLayout() {
   const questions = [
@@ -32,7 +32,14 @@ function SurveyPageLayout() {
       '5. 프로토타이핑 툴(Pixso, Adobe XD, 스케치)',
       '6. 서버 관리 도구'
     ],
-    ['1. 시장 조사', '2. 일정 계획 수립', '3. 디자인 스케치', '4. 사용자 요구사항 정리', '5. 초기 페이지 코딩', '6. 데이터 베이스 설계'],
+    [
+      '1. 시장 조사',
+      '2. 일정 계획 수립',
+      '3. 디자인 스케치',
+      '4. 사용자 요구사항 정리',
+      '5. 초기 페이지 코딩',
+      '6. 데이터 베이스 설계'
+    ],
     [
       '1. 사업의 시장 조사와 기획',
       '2. 팀의 조화와 일정 관리',
@@ -111,24 +118,21 @@ function SurveyPageLayout() {
       '백엔드 개발자'
     ];
     const result = roles[maxScoreIndex];
-  
-    const { data, error } = await supabaseClient
-      .from('JOB_POSITION')
-      .select('counter')
-      .eq('type_name', result);
-  
+
+    const { data, error } = await supabaseClient.from('JOB_POSITION').select('counter').eq('type_name', result);
+
     if (error) {
       console.error('Error fetching data:', error.message);
       return;
     }
-  
+
     if (data && data.length > 0) {
       const { counter } = data[0];
       const { error: updateError } = await supabaseClient
         .from('JOB_POSITION')
         .update({ counter: counter + 1 })
         .eq('type_name', result);
-  
+
       if (updateError) {
         console.error('Error updating counter:', updateError.message);
       } else {
@@ -137,15 +141,16 @@ function SurveyPageLayout() {
     } else {
       console.error('No data found :', result);
     }
-  
+
     navigate('/result', { state: { result } });
   }
-  
 
   return (
-    <Wrap>
+    <>
       <Header>
-        <BackButton onClick={handleBackClick} style={{ fontSize:"16px", color:"#c7c7c7"}}> Back </BackButton>
+        <BackButton onClick={handleBackClick} style={{ fontSize: '16px', color: '#c7c7c7' }}>
+          Back
+        </BackButton>
         <Counter>
           {currentQuestionIndex + 1} / {questions.length}
         </Counter>
@@ -156,16 +161,22 @@ function SurveyPageLayout() {
       <Question>{questions[currentQuestionIndex]}</Question>
       <Options>
         {options[currentQuestionIndex].map((option, index) => (
-          <Button variant="choice" key={index} onClick={() => handleOptionClick(index)} selected={selectedOption === index}>
+          <Button
+            variant="choice"
+            key={index}
+            onClick={() => handleOptionClick(index)}
+            selected={selectedOption === index}
+          >
             {option}
           </Button>
         ))}
       </Options>
       {currentQuestionIndex === questions.length - 1 && selectedOption !== null && (
-        <Button variant="fill" style={{marginTop:"20px"}}
-        onClick={handleResultClick}>결과 보러가기</Button>
+        <Button variant="fill" style={{ marginTop: '20px' }} onClick={handleResultClick}>
+          결과 보러가기
+        </Button>
       )}
-    </Wrap>
+    </>
   );
 }
 
@@ -184,7 +195,7 @@ const Progress = styled.div`
   width: ${(props) => props.width}%;
   height: 100%;
   border-radius: 20px;
-  background-color: #5A6AFB;
+  background-color: #5a6afb;
   transition: width 0.5s ease-in-out;
 `;
 
@@ -207,16 +218,16 @@ const Counter = styled.div`
   font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 700;
-  color: #5A6AFB;
+  color: #5a6afb;
 `;
 
 const Question = styled.h2`
-    font-family: 'Pretendard';
+  font-family: 'Pretendard';
   font-size: 36px;
   font-weight: 700;
   color: #333;
   line-height: 120%;
-  letter-spacing : -0.4px;
+  letter-spacing: -0.4px;
   margin-bottom: 50px;
 `;
 
@@ -227,29 +238,12 @@ const Options = styled.div`
   width: 100%;
 `;
 
-
-
-const Wrap = styled.main`
-  width: 100%;
-  min-width: 375px;
-  max-width: 600px;
-  min-height: calc(100vh - 50px);
-  margin: 25px auto;
-  padding: 40px;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
-`;
-
-
 const T24 = styled.span`
   display: block;
   font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 700;
-  color: #5A6AFB;
+  color: #5a6afb;
 `;
 
 const T36 = styled.span`
@@ -259,6 +253,6 @@ const T36 = styled.span`
   font-weight: 700;
   color: #333;
   line-height: 120%;
-  letter-spacing : -0.4px;
+  letter-spacing: -0.4px;
   margin-bottom: 54px;
 `;

@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const SideBar = ({ isOpen, setIsOpen }) => {
   const closeSideBar = () => {
@@ -13,12 +14,16 @@ const SideBar = ({ isOpen, setIsOpen }) => {
       <SidebarContainer isOpen={isOpen}>
         <SidebarList>
           <StyledFontAwesomeIcon onClick={closeSideBar} icon={faAnglesRight} />
-          <SidebarItem>
-            <SidebarLink href="/">IT 입사 테스트 하기</SidebarLink>
-          </SidebarItem>
-          <SidebarItem>
-            <SidebarLink href="/job-position">IT 직군 알아보기</SidebarLink>
-          </SidebarItem>
+          <li>
+            <SidebarLink to="/" onClick={closeSideBar}>
+              IT 입사 테스트 하기
+            </SidebarLink>
+          </li>
+          <li>
+            <SidebarLink to="/job-position" onClick={closeSideBar}>
+              IT 직군 알아보기
+            </SidebarLink>
+          </li>
         </SidebarList>
       </SidebarContainer>
     </>
@@ -40,34 +45,29 @@ const SidebarContainer = styled.div`
   top: 0;
   right: ${(props) => (props.isOpen ? '0' : '-300px')};
   width: 300px;
-  /* height: 100%; */
+  min-height: calc(100vh - 50px);
+  padding: 28px 40px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   z-index: 1000;
-  height: 100vh;
-  /* overflow-y: auto; */
 `;
 
 const SidebarList = styled.ul`
-  list-style: none;
-  padding: 0;
+  & > li {
+    padding: 14px 0px;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  margin-bottom: 20px;
+  margin-bottom: 63px;
   cursor: pointer;
   &:hover {
     cursor: pointer;
   }
 `;
 
-const SidebarItem = styled.li`
-  padding: 15px;
-  margin-left: 20px;
-`;
-
-const SidebarLink = styled.a`
+const SidebarLink = styled(Link)`
   text-decoration: none;
   color: black;
 `;

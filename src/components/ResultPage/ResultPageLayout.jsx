@@ -1,6 +1,6 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../../asset/button/Button';
-import { useLocation, useNavigate } from 'react-router-dom';
 import '../../asset/font/pretendardvariable.css';
 import imagePath from '../../asset/images/programming.png';
 import PercentageTable from './PercentageTable';
@@ -8,19 +8,18 @@ import SharePage from './SharePage';
 
 export default function ResultPageLayout({ jobPositions, isLoading }) {
   const location = useLocation();
-  const result = location.state?.result||'프론트엔드 개발자'; // 임시로 '프론트엔드 개발자' 로 설정 
+  const result = location.state?.result || '프론트엔드 개발자'; // 임시로 '프론트엔드 개발자' 로 설정
   const navigate = useNavigate();
- 
 
   function handleRetakeTest() {
     navigate('/Survey');
   }
 
   return (
-    <Wrap>
+    <>
       <Title>
         <T26>입사를 축하합니다! 당신의 직군은</T26>
-        <T48b>{ result }</T48b>
+        <T48b>{result}</T48b>
         <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
       </Title>
       <TitleImg src={imagePath} />
@@ -59,24 +58,9 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
         <SharePage />
         <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
-    </Wrap>
+    </>
   );
 }
-
-const Wrap = styled.main`
-  width: 100%;
-  min-width: 375px;
-  max-width: 600px;
-  min-height: calc(100vh - 50px);
-  margin: 25px auto;
-  padding: 40px;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
-`;
 
 const Section = styled.div`
   margin: 0 auto;
@@ -151,7 +135,7 @@ const T20 = styled.span`
   font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 300;
-  color: #4B5563;
+  color: #4b5563;
 `;
 
 const T18 = styled.span`
@@ -159,5 +143,5 @@ const T18 = styled.span`
   font-family: 'Pretendard';
   font-size: 18px;
   font-weight: 200;
-  color: #A5A5A5;
+  color: #a5a5a5;
 `;
