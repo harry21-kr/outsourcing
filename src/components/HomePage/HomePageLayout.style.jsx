@@ -58,7 +58,7 @@ export const TextContainer = styled.div`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 20px;
     color: #555;
     margin-top: 24px;
     margin-bottom: 60px;
