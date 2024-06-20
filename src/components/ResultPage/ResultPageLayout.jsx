@@ -1,31 +1,44 @@
 import styled from 'styled-components';
 import { Button } from '../../asset/button/Button';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../../asset/font/pretendardvariable.css';
 import imagePath from '../../asset/images/programming.png';
 import PercentageTable from './PercentageTable';
 
 export default function ResultPageLayout({ jobPositions, isLoading }) {
+  const location = useLocation();
+  const {result} = location.state;
+  const navigate = useNavigate();
+
+  function handleRetakeTest() {
+    navigate('/Survey'); // 설문조사 페이지로 이동
+  }
+
   return (
     <Wrap>
       <Title>
-        <T28>입사를 축하합니다! 당신의 직군은</T28>
-        <T48b>프론트엔드 개발자</T48b>
+        <T26>입사를 축하합니다! 당신의 직군은</T26>
+        <T48b>{ result }</T48b>
         <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
       </Title>
       <TitleImg src={imagePath} />
-
+      
       <Section>
-        <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
-        <T20>
-          당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의
-          권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자
-          인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
-          <ul>
-            <li>프론트엔드는 이런일을해요1</li>
-            <li>프론트엔드는 이런일을해요2</li>
-            <li>프론트엔드는 이런일을해요3</li>
-          </ul>
-        </T20>
+      <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
+      <T20>
+        당신은 사용자 인터페이스의 권위자 입니다 당신은 
+        사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자
+         입니다
+        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
+        인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
+        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
+        인터페이스의 권위자 입니다
+        <ul>
+          <li>{result} (멘트 추가)</li>
+          <li>{result} (멘트 추가)</li>
+          <li>{result} (멘트 추가)</li>
+        </ul>
+      </T20>
       </Section>
 
       <Section>
@@ -42,15 +55,11 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
         ></iframe>
       </Section>
 
-      <PercentageTable style={{marginBottom:"40px"}} jobPositions={jobPositions} isLoading={isLoading} />
+      <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
 
       <Section>
-        <Button 
-        variant="fill" 
-        style={{marginBottom:"10px"}}
-        >결과 공유하기</Button>
-        <Button style={{marginBottom:"10px"}}> 카카오톡으로 공유하기 </Button>
-        <Button > 테스트 다시하기 </Button>
+        <Button variant="fill" style={{marginTop:"40px", marginBottom:"10px"}} >결과 공유하기</Button>
+        <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
     </Wrap>
   );
@@ -73,7 +82,7 @@ const Wrap = styled.main`
 
 const Section = styled.div`
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   display: block;
 `;
 
@@ -95,19 +104,13 @@ const TitleImg = styled.img`
   margin-bottom: 70px;
 `;
 
-//버튼
-
-const BtnMiddleFill = styled.img`
-  max-width: 520px;
-  height: 76px;
-`;
-
-//폰트 > 나중에 정리 하여 컴포넌트화 or 글로벌스타일 의논하여 상의
+//폰트
 const T48b = styled.span`
   display: block;
   font-family: 'Pretendard';
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 800;
+  margin-bottom: 30px;
   color: #111827;
 `;
 
@@ -131,8 +134,9 @@ const T28 = styled.span`
 const T26 = styled.span`
   display: block;
   font-family: 'Pretendard';
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
   color: #111827;
 `;
 

@@ -1,5 +1,5 @@
-import { Content, ImageContainer, MainImage, TextContainer, TestButton } from './HomePageLayout.style';
-import mainImage from '../../../public/main.png';
+import { Content, ImageContainer, MainImage, TextContainer } from './HomePageLayout.style';
+import programming from '../../../src/asset/images/programming.png';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../asset/button/Button';
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ export default function HomePageLayout() {
     <Wrap>
       <Content>
         <ImageContainer>
-          <MainImage src={mainImage} alt="Main이미지" />
+          <MainImage style={{height:"300px", width:"300px"}} src={programming} alt="Main이미지" />
         </ImageContainer>
         <TextContainer>
           <T26>어느날 갑자기 IT 회사에 들어간 나</T26>
@@ -48,13 +48,14 @@ const T48b = styled.span`
   font-weight: 800;
   color: #111827;
   margin-bottom: 40px;
-  line-height: 120%;
+  line-height: 110%;
+  letter-spacing : -2px;
 `;
 const T26 = styled.span`
  display: block;
   font-family: 'Pretendard';
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 500;
   color: #111827;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;

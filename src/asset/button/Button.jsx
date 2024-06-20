@@ -40,54 +40,55 @@ const baseStyles = css`
   justify-content: center;
   white-space: nowrap;
   border-radius: 16px;
-  font-size: 22px;
   font-family: 'Pretendard';
   font-weight: 600;
-  color: #5A6AFB; 
-  border: 2px solid #8b97ff;
+  color: #5A6AFB;
+  border: 1px solid #8b97ff;
   transition: 0.15s ease-in-out;
+  max-width: 520px;
+  min-width: 380px;
 `;
 
 const variantStyles = {
   default: css`
     background-color: var(--color-secondary);
-    color: #5A6AFB; 
+    font-size: 22px;
+    color: #5A6AFB;
     border: 2px solid #8b97ff;
-    height: 70px;
+    height: 66px;
     font-weight: bold;
     &:hover {
       background-color: #dadeff;
     }
   `,
   fill: css`
-      background-color: #5A6AFB;
-      height: 70px;
-      border: none;
+    background-color: #5A6AFB;
+    height: 66px;
+    font-size: 22px;
+    border: none;
     color: #ffffff;
     &:hover {
       background-color: #4956cb;
-
     }
   `,
   choice: css`
-  background-color: #ffffff;
-    height: 66px;
-    color: #5A6AFB; 
-    padding-left: 40px; 
+    background-color: #ffffff;
+    height: 60px;
+    color: #5A6AFB;
+    padding-left: 40px;
+    font-size: 20px;
     display: flex;
     justify-content: flex-start;
     text-align: left;
     &:hover {
       background-color: #dadeff;
-
     }
-    margin: 6px 0;
   `
 };
 
 const sizeStyles = {
   default: css`
-    width: 520px;
+    width: 100%;
     padding: 10px 24px;
   `
 };
