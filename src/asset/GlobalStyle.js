@@ -7,14 +7,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  h2, p {
-    margin: 0;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
   body {
     font-family: "Pretendard", "Helvetica", "Arial", sans-serif;;
   font-size: 20px;
