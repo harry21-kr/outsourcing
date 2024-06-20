@@ -1,21 +1,21 @@
-import styled from 'styled-components';
-import { ToastContainer } from 'react-toastify';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { ToastContainer } from 'react-toastify';
+import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: -20px;
 `;
 
 export const Content = styled.main`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
 `;
 
 export const StyledToastContainer = styled(ToastContainer)`

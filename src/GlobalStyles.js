@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: "Pretendard", "Helvetica", "Arial", sans-serif;
+        word-break: keep-all;
     }
 `;
 
