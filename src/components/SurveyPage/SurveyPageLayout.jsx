@@ -154,7 +154,7 @@ const Question = styled.h2`
   color: #333;
   line-height: 120%;
   letter-spacing: -0.4px;
-  margin-bottom: 50px;
+  margin-bottom: 33px;
 `;
 
 const Options = styled.div`
