@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../../asset/button/Button';
 import '../../asset/font/pretendardvariable.css';
 import imagePath from '../../asset/images/programming.png';
+import Comment from '../Comment/Comment';
 import PercentageTable from './PercentageTable';
 import SharePage from './SharePage';
 
@@ -58,6 +59,8 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
         <SharePage />
         <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
+
+      <Comment />
     </>
   );
 }

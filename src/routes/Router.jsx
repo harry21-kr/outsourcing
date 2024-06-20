@@ -15,7 +15,7 @@ export default function Router() {
           <Route path="/job-position" element={<JobPositionPage />} />
           <Route path="/job-position/:position" element={<JobPositionDetail />} />
           <Route path="/survey" element={<SurveyPage />} />
-          <Route path="/result" element={<ResultPage />} />
+          <Route path="/result/:position" element={<ResultPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

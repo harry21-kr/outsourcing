@@ -110,16 +110,16 @@ function SurveyPageLayout() {
   async function handleResultClick() {
     const maxScoreIndex = optionScores.indexOf(Math.max(...optionScores));
     const roles = [
-      '서비스 기획자',
-      '프로덕트 기획자',
-      '프로덕트 디자이너',
-      'UI/UX 디자이너',
-      '프론트엔드 개발자',
-      '백엔드 개발자'
+      'service_planner',
+      'product_manager',
+      'product_designer',
+      'ui_ux_designer',
+      'frontend_developer',
+      'backend_developer'
     ];
     const result = roles[maxScoreIndex];
 
-    const { data, error } = await supabaseClient.from('JOB_POSITION').select('counter').eq('type_name', result);
+    const { data, error } = await supabaseClient.from('JOB_POSITION').select('counter').eq('type', result);
 
     if (error) {
       console.error('Error fetching data:', error.message);
@@ -131,7 +131,7 @@ function SurveyPageLayout() {
       const { error: updateError } = await supabaseClient
         .from('JOB_POSITION')
         .update({ counter: counter + 1 })
-        .eq('type_name', result);
+        .eq('type', result);
 
       if (updateError) {
         console.error('Error updating counter:', updateError.message);
@@ -142,7 +142,7 @@ function SurveyPageLayout() {
       console.error('No data found :', result);
     }
 
-    navigate('/result', { state: { result } });
+    navigate(`/result/${result}`, { state: { result } });
   }
 
   return (
