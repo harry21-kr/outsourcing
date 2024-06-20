@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import "../../asset/font/pretendardvariable.css";
+import '../../asset/font/pretendardvariable.css';
 
 const Button = forwardRef(
   (
@@ -42,18 +42,20 @@ const baseStyles = css`
   border-radius: 16px;
   font-family: 'Pretendard';
   font-weight: 600;
-  color: #5A6AFB;
+  color: #5a6afb;
   border: 1px solid #8b97ff;
   transition: 0.15s ease-in-out;
   max-width: 520px;
   min-width: 380px;
+  cursor: pointer;
+  margin: 5px;
 `;
 
 const variantStyles = {
   default: css`
     background-color: var(--color-secondary);
     font-size: 22px;
-    color: #5A6AFB;
+    color: #5a6afb; /* 글자 색상 변경 */
     border: 2px solid #8b97ff;
     height: 66px;
     font-weight: bold;
@@ -62,7 +64,7 @@ const variantStyles = {
     }
   `,
   fill: css`
-    background-color: #5A6AFB;
+    background-color: #5a6afb;
     height: 66px;
     font-size: 22px;
     border: none;

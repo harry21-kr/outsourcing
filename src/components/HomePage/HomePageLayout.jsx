@@ -1,13 +1,14 @@
-import { Content, ImageContainer, MainImage, TextContainer } from './HomePageLayout.style';
-import programming from '../../../src/asset/images/programming.png';
+import { Container, CenterTitle, Content, ImageContainer, MainImage, SubTitle } from './HomePageLayout.style';
+import mainImage from '../../../src/asset/images/programming.png';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../asset/button/Button';
 import styled from 'styled-components';
+import programming from '../../../src/asset/images/programming.png';
 
 export default function HomePageLayout() {
   const navigate = useNavigate();
   const handleTestClick = () => {
-    navigate('/survey'); // 이동할 페이지경로로 수정예정
+    navigate('/survey');
   };
   return (
     <Wrap>
