@@ -46,5 +46,6 @@ const Logo = styled.img`
 `;
 
 const OpenSideBarButton = styled(FontAwesomeIcon)`
+  height: 31px;
   cursor: pointer;
 `;
