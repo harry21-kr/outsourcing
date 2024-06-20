@@ -135,8 +135,6 @@ function SurveyPageLayout() {
 
       if (updateError) {
         console.error('Error updating counter:', updateError.message);
-      } else {
-        console.log('Counter updated successfully', result);
       }
     } else {
       console.error('No data found :', result);
