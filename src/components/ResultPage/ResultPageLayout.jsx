@@ -7,8 +7,9 @@ import PercentageTable from './PercentageTable';
 
 export default function ResultPageLayout({ jobPositions, isLoading }) {
   const location = useLocation();
-  const {result} = location.state;
+  const result = location.state?.result||'프론트엔드 개발자'; // 임시로 '프론트엔드 개발자' 로 설정 
   const navigate = useNavigate();
+ 
 
   function handleRetakeTest() {
     navigate('/Survey'); // 설문조사 페이지로 이동
