@@ -4,41 +4,38 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import '../../asset/font/pretendardvariable.css';
 import imagePath from '../../asset/images/programming.png';
 import PercentageTable from './PercentageTable';
+import SharePage from './SharePage';
 
 export default function ResultPageLayout({ jobPositions, isLoading }) {
   const location = useLocation();
-  const {result} = location.state;
+  const { result } = location.state;
   const navigate = useNavigate();
 
   function handleRetakeTest() {
-    navigate('/Survey'); // 설문조사 페이지로 이동
+    navigate('/Survey');
   }
 
   return (
     <Wrap>
       <Title>
         <T28>입사를 축하합니다! 당신의 직군은</T28>
-        <T48b>{ result }</T48b>
+        <T48b>{result}</T48b>
         <T20>당신은 사용자 인터페이스의 권위자 입니다</T20>
       </Title>
       <TitleImg src={imagePath} />
-      
+
       <Section>
-      <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
-      <T20>
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 
-        사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자
-         입니다
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
-        인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
-        당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 
-        인터페이스의 권위자 입니다
-        <ul>
-          <li>{result} (멘트 추가)</li>
-          <li>{result} (멘트 추가)</li>
-          <li>{result} (멘트 추가)</li>
-        </ul>
-      </T20>
+        <T28>한줄 설명이 들어갑니다 한줄 설명</T28>
+        <T20>
+          당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의
+          권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자
+          인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다 당신은 사용자 인터페이스의 권위자 입니다
+          <ul>
+            <li>{result} (멘트 추가)</li>
+            <li>{result} (멘트 추가)</li>
+            <li>{result} (멘트 추가)</li>
+          </ul>
+        </T20>
       </Section>
 
       <Section>
@@ -65,14 +62,14 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </Section>
 
       <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
 
       <Section>
-        <Button variant="fill">결과 공유하기</Button>
+        <SharePage />
         <Button onClick={handleRetakeTest}>테스트 다시하기</Button>
       </Section>
     </Wrap>
