@@ -1,4 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
+import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { signInAnonymously } from '../../supabase/api/auth';
@@ -7,32 +8,59 @@ import useCommentMutation from './hooks/mutation/useCommentMutation';
 export default function CommentForm({ session }) {
   const { position } = useParams();
 
+  const [nickname, setNickname] = useState('');
+  const [comment, setComment] = useState('');
+
   const { mutateAsync: signIn } = useMutation({
     mutationFn: () => signInAnonymously()
   });
 
   const { createComment } = useCommentMutation();
 
+  const isValidated = useMemo(() => !!(nickname && comment), [comment, nickname]);
+
   async function handleSignInAnonymously(e) {
     e.preventDefault();
+
+    if (!isValidated) return;
+
     if (session) {
       await createComment({
         userId: session.user.id,
-        nickname: '박원빈',
-        comment: '프론트엔드재밌어요!',
+        nickname: nickname,
+        comment: comment,
         jobPosition: position
       });
+      setNickname('');
+      setComment('');
     } else {
-      await signIn();
+      const { user } = await signIn();
+      await createComment({
+        userId: user.id,
+        nickname: nickname,
+        comment: comment,
+        jobPosition: position
+      });
+      setNickname('');
+      setComment('');
     }
   }
 
   return (
     <CommentFormBackground>
       <CommentFormWrapper onSubmit={handleSignInAnonymously}>
-        <NicknameInput placeholder="닉네임" />
-        <CommentInput placeholder="내용을 입력해주세요." />
-        <SubmitButton>코멘트 남기기</SubmitButton>
+        <NicknameInput
+          type="text"
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
+          placeholder="닉네임"
+        />
+        <CommentTextarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="내용을 입력해주세요."
+        />
+        <SubmitButton disabled={!isValidated}>코멘트 남기기</SubmitButton>
       </CommentFormWrapper>
     </CommentFormBackground>
   );
@@ -71,7 +99,7 @@ const NicknameInput = styled.input`
   }
 `;
 
-const CommentInput = styled.textarea`
+const CommentTextarea = styled.textarea`
   height: 120px;
   padding: 24px 30px;
 
@@ -90,10 +118,17 @@ const CommentInput = styled.textarea`
 const SubmitButton = styled.button`
   height: 54px;
   border-radius: 17px;
-  background: #cacaca;
+
   border: none;
 
   font-size: 24px;
   font-weight: bold;
   color: white;
+
+  background: #5a6afb;
+  transition: all 0.3s ease-in-out;
+
+  &:disabled {
+    background: #cacaca;
+  }
 `;

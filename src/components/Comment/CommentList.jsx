@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import CommentItem from './CommentItem';
 import useCommentQuery from './hooks/query/useCommentQuery';
 
-export default function CommentList() {
+export default function CommentList({ session }) {
   const comments = useCommentQuery();
 
   return (
     <ListWrapper>
       {comments.map((comment) => (
-        <CommentItem key={comment.id} commentItem={comment} />
+        <CommentItem key={comment.id} commentItem={comment} session={session} />
       ))}
     </ListWrapper>
   );

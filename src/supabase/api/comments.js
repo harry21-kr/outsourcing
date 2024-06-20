@@ -6,7 +6,7 @@ export async function getComments() {
 }
 
 export async function getCommentsByJobPosition(jobPosition) {
-  const { data: comments } = await supabaseClient.from('COMMENTS').select().eq('jobPosition', jobPosition);
+  const { data: comments } = await supabaseClient.from('COMMENTS').select().eq('job_position', jobPosition);
   return comments;
 }
 
@@ -18,14 +18,14 @@ export async function insertComment(userId, nickname, comment, jobPosition) {
   if (error) throw new Error(error);
 }
 
-export async function updateComment(userId, comment) {
-  const { error } = await supabaseClient.from('COMMENTS').update({ comment: comment }).eq('user_id', userId);
+export async function updateComment(id, comment) {
+  const { error } = await supabaseClient.from('COMMENTS').update({ comment: comment }).eq('id', id);
 
   if (error) throw new Error(error);
 }
 
-export async function deleteComment(id, userId) {
-  const { error } = await supabaseClient.from('COMMENTS').delete().eq('id', id).eq('user_id', userId);
+export async function deleteComment(id) {
+  const { error } = await supabaseClient.from('COMMENTS').delete().eq('id', id);
 
   if (error) throw new Error(error);
 }

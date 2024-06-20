@@ -24,7 +24,7 @@ export default function Comment() {
   return (
     <Wrapper>
       <CommentForm session={session} />
-      <CommentList />
+      <CommentList session={session} />
     </Wrapper>
   );
 }
