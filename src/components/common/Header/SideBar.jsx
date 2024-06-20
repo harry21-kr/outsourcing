@@ -56,6 +56,7 @@ const SidebarContainer = styled.div`
 const SidebarList = styled.ul`
   & > li {
     padding: 14px 0px;
+    margin-bottom: 22px;
   }
 `;
 
@@ -70,5 +71,6 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 
 const SidebarLink = styled(Link)`
   text-decoration: none;
+  font-size: 24px;
   color: black;
 `;
