@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { JOB_POSITION } from '../../constants';
 import Comment from '../Comment/Comment';
-import VideoDisplay from './VideoDisplay';
+import VideoDisplay from '../common/VideoDisplay';
 
 export default function JobPositionDetail() {
   const params = useParams();

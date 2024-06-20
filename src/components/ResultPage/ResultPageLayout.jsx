@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button } from '../../asset/button/Button';
 import '../../asset/font/pretendardvariable.css';
 import { JOB_POSITION } from '../../constants';
 import Comment from '../Comment/Comment';
-import VideoDisplay from '../JobPositionPage/VideoDisplay';
+import { Button } from '../common/Button/Button';
+import VideoDisplay from '../common/VideoDisplay';
 import PercentageTable from './PercentageTable';
 import SharePage from './SharePage';
 

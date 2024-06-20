@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import '../../asset/font/pretendardvariable.css';
+import '../../../asset/font/pretendardvariable.css';
 
 const Button = forwardRef(
   (
@@ -76,7 +76,7 @@ const variantStyles = {
   choice: css`
     background-color: #ffffff;
     height: 60px;
-    color: #5A6AFB;
+    color: #5a6afb;
     padding-left: 40px;
     font-size: 20px;
     display: flex;

@@ -9,10 +9,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: "Pretendard", "Helvetica", "Arial", sans-serif;;
-        font-size: 20px;
-        font-weight: 400;
-        color: #4B5563;
+        font-family: "Pretendard", "Helvetica", "Arial", sans-serif;
     }
 `;
 

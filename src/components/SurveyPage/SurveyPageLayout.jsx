@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button } from '../../asset/button/Button';
 import supabaseClient from '../../supabase/supabaseClient';
+import { Button } from '../common/Button/Button';
 
 function SurveyPageLayout() {
   const questions = [

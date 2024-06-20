@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import programming from '../../../public/images/programming.png';
-import { Button } from '../../asset/button/Button';
+import { Button } from '../common/Button/Button';
 import { Content, ImageContainer, MainImage, TextContainer } from './HomePageLayout.style';
 
 export default function HomePageLayout() {
