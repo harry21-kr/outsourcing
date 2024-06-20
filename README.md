@@ -84,6 +84,7 @@ npm install
 ```bash
 VITE_API_BASE_URL=https://your-api-url.com
 VITE_LOGIN_API_BASE_URL=https://your-login-api-url.com
+VITE_KAKAO_KEY=your-api-key
 ```
 
 ### 실행 👀
