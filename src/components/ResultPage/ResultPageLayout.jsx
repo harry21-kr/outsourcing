@@ -5,6 +5,7 @@ import { Button } from '../../asset/button/Button';
 import '../../asset/font/pretendardvariable.css';
 import { JOB_POSITION } from '../../constants';
 import Comment from '../Comment/Comment';
+import VideoDisplay from '../JobPositionPage/VideoDisplay';
 import PercentageTable from './PercentageTable';
 import SharePage from './SharePage';
 
@@ -37,16 +38,7 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
 
       <Section>
         <T28>영상으로 보는 직업</T28>
-        <iframe
-          width="520"
-          height="285"
-          src="https://www.youtube.com/embed/ceJMyCfYuwc?si=YfM3oO2emdozNLLn"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        <VideoDisplay videoId={videoId} width={520} height={285} />
       </Section>
 
       <PercentageTable jobPositions={jobPositions} isLoading={isLoading} />
