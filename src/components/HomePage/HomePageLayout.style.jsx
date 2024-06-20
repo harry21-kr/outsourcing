@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
+  min-width: 375px;
+  max-width: 600px;
+  min-height: calc(100vh - 50px);
+  margin: 25px auto;
+  padding: 40px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Arial, sans-serif';
+  background: white;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
 `;
 
 export const Content = styled.main`
