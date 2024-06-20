@@ -11,7 +11,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
   return (
     <>
       {isOpen && <Overlay onClick={closeSideBar}></Overlay>}
-      <SidebarContainer isOpen={isOpen}>
+      <SidebarContainer $isOpen={isOpen}>
         <SidebarList>
           <StyledFontAwesomeIcon onClick={closeSideBar} icon={faAnglesRight} />
           <li>
@@ -43,7 +43,7 @@ const Overlay = styled.div`
 const SidebarContainer = styled.div`
   position: absolute;
   top: 0;
-  right: ${(props) => (props.isOpen ? '0' : '-300px')};
+  right: ${(props) => (props.$isOpen ? '0' : '-300px')};
   width: 300px;
   min-height: calc(100vh - 50px);
   padding: 28px 40px;
