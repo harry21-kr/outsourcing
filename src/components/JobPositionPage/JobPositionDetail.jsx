@@ -45,7 +45,7 @@ const HighlightText = styled.h2`
 const DetailText = styled.p`
   width: 100%;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.2;
   color: #4b5563;
 
   text-align: center;

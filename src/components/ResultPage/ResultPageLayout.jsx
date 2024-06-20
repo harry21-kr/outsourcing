@@ -130,7 +130,7 @@ const T20 = styled.span`
   font-weight: 300;
   color: #4b5563;
   text-align: center;
-  line-height: 1.15;
+  line-height: 1.2;
 `;
 
 const T18 = styled.span`
