@@ -10,41 +10,24 @@ export default function HomePageLayout() {
     navigate('/survey');
   };
   return (
-    <Wrap>
-      <Content>
-        <ImageContainer>
-          <MainImage style={{ height: '300px', width: '300px' }} src={programming} alt="Main이미지" />
-        </ImageContainer>
-        <TextContainer>
-          <T26>어느날 갑자기 IT 회사에 들어간 나</T26>
-          <T48b>
-            어떤 IT 직업을 <br />
-            갖게 되었을까요?
-          </T48b>
-          <p>성격별 IT직종 적합테스트</p>
-        </TextContainer>
-        <Button variant="fill" onClick={handleTestClick}>
-          입사 테스트하기
-        </Button>
-      </Content>
-    </Wrap>
+    <Content>
+      <ImageContainer>
+        <MainImage style={{ height: '300px', width: '300px' }} src={programming} alt="Main이미지" />
+      </ImageContainer>
+      <TextContainer>
+        <T26>어느날 갑자기 IT 회사에 들어간 나</T26>
+        <T48b>
+          어떤 IT 직업을 <br />
+          갖게 되었을까요?
+        </T48b>
+        <p>성격별 IT직종 적합테스트</p>
+      </TextContainer>
+      <Button variant="fill" onClick={handleTestClick}>
+        입사 테스트하기
+      </Button>
+    </Content>
   );
 }
-
-const Wrap = styled.main`
-  width: 100%;
-  min-width: 375px;
-  max-width: 600px;
-  min-height: calc(100vh - 50px);
-  margin: 25px auto;
-  padding: 40px;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
-`;
 
 const T48b = styled.span`
   font-family: 'Pretendard';
