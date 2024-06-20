@@ -1,8 +1,8 @@
-import { Container, Content, SuccessIcon, ErrorIcon } from './SharePage.style';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Button } from '../../asset/button/Button';
+import { Button } from '../common/Button/Button';
+import { Container, Content, ErrorIcon, SuccessIcon } from './SharePage.style';
 
 export default function SharePage() {
   useEffect(() => {
