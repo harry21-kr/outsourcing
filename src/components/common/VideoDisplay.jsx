@@ -7,6 +7,10 @@ const VideoContainer = styled.div`
   position: relative;
   width: ${(props) => props.width || '520px'};
   height: ${(props) => props.height || '285px'};
+
+  iframe {
+    width: 100%;
+  }
 `;
 
 function VideoDisplay({ videoId, width = '520px', height = '285px' }) {
