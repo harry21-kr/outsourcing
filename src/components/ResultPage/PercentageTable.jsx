@@ -30,6 +30,9 @@ const JobItem = styled.li`
   flex-wrap: wrap;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
+
+  font-size: 20px;
+
   &:last-child {
     border-bottom: none;
   }
