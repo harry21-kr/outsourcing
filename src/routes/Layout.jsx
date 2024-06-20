@@ -42,5 +42,5 @@ const Box = styled.div`
   padding: 96px 40px;
 
   background: white;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 1));
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.12));
 `;
