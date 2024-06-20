@@ -39,7 +39,97 @@ IT핏은 사용자가 IT 직종 중 자신에게 맞는 직종을 테스트하�
 ## 디렉토리 구조 🗂️
 
 ```lua
-src/
+node_modules
+public
+└── images
+    └── favicon.jpg
+src
+├── asset
+│   └── font
+│       ├── Pretendard-Black.subset.woff
+│       ├── Pretendard-Bold.subset.woff
+│       ├── Pretendard-ExtraBold.subset.woff
+│       ├── Pretendard-ExtraLight.subset.woff
+│       ├── Pretendard-Light.subset.woff
+│       ├── Pretendard-Medium.subset.woff
+│       ├── Pretendard-Regular.subset.woff
+│       ├── Pretendard-SemiBold.subset.woff
+│       ├── Pretendard-Thin.subset.woff
+│       └── pretendardvariable.css
+├── components
+│   ├── Comment
+│   │   ├── hooks
+│   │   │   ├── mutation
+│   │   │   │   └── useCommentMutation.js
+│   │   │   └── query
+│   │   │       └── useCommentQuery.js
+│   │   ├── Comment.jsx
+│   │   ├── CommentForm.jsx
+│   │   ├── CommentItem.jsx
+│   │   └── CommentList.jsx
+│   ├── common
+│   │   ├── Button
+│   │   │   ├── Button.jsx
+│   │   │   └── index.js
+│   │   ├── Header
+│   │   │   ├── Header.jsx
+│   │   │   └── SideBar.jsx
+│   └── ui
+│       ├── Bar.js
+│       ├── Box.js
+│       ├── Circle.js
+│       └── VideoDisplay.jsx
+├── HomePage
+│   ├── HomePageLayout.jsx
+│   └── HomePageLayout.style.jsx
+├── JobPositionPage
+│   ├── JobPositionBanner.jsx
+│   ├── JobPositionDetail.jsx
+│   ├── JobPositionItem.jsx
+│   ├── JobPositionList.jsx
+│   ├── JobPositionPageLayout.jsx
+│   └── JobPositionSummary.jsx
+├── ResultPage
+│   ├── PercentageTable.jsx
+│   ├── ResultPageLayout.jsx
+│   ├── SharePage.jsx
+│   └── SharePage.style.jsx
+├── SurveyPage
+│   └── SurveyPageLayout.jsx
+├── constants
+│   └── index.js
+├── pages
+│   ├── HomePage
+│   │   └── HomePage.jsx
+│   ├── JobPositionPage
+│   │   └── JobPositionPage.jsx
+│   ├── ResultPage
+│   │   └── ResultPage.jsx
+│   └── SurveyPage
+│       └── SurveyPage.jsx
+├── routes
+│   ├── Layout.jsx
+│   └── Router.jsx
+├── supabase
+│   ├── api
+│   │   ├── auth.js
+│   │   ├── comments.js
+│   │   ├── jopPosition.js
+│   │   └── supabaseClient.js
+│   ├── GlobalStyles.js
+│   ├── main.jsx
+│   └── Providers.jsx
+.env.local
+.eslintrc.cjs
+.gitignore
+.prettierrc
+index.html
+package.json
+README.md
+vercel.json
+vite.config.js
+yarn-error.log
+yarn.lock
 ```
 
 ## 사용 기술 🛠️
@@ -71,7 +161,7 @@ src/
 ```bash
 git clone https://github.com/your-repository.git
 cd your-repository
-npm install
+yarn install
 ```
 
 ### 환경 변수 설정 🔧
@@ -89,7 +179,7 @@ VITE_KAKAO_KEY=your-api-key
 ### 실행 👀
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## 라이선스 📄
