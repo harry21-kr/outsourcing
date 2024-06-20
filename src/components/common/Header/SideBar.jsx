@@ -61,6 +61,7 @@ const SidebarList = styled.ul`
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   margin-bottom: 63px;
+  height: 31px;
   cursor: pointer;
   &:hover {
     cursor: pointer;
