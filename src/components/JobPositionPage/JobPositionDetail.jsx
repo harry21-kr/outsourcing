@@ -42,19 +42,13 @@ const HighlightText = styled.h2`
   margin-bottom: 70px;
 `;
 
-const SummaryText = styled.h3`
-  width: 100%;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: start;
-
-  margin-bottom: 14px;
-`;
-
 const DetailText = styled.p`
   width: 100%;
   font-size: 20px;
+  line-height: 1.15;
   color: #4b5563;
+
+  text-align: center;
 
   margin-bottom: 70px;
 `;

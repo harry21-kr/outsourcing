@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Logo onClick={handleLogoClick} src={LogoSvg} width={95} height={31} />
-      <FontAwesomeIcon icon={faBars} onClick={toggleSide} />
+      <OpenSideBarButton icon={faBars} onClick={toggleSide} />
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
     </HeaderWrapper>
   );
@@ -42,5 +42,9 @@ const HeaderWrapper = styled.header`
 `;
 
 const Logo = styled.img`
+  cursor: pointer;
+`;
+
+const OpenSideBarButton = styled(FontAwesomeIcon)`
   cursor: pointer;
 `;

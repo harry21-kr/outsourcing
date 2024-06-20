@@ -54,12 +54,14 @@ export default function ResultPageLayout({ jobPositions, isLoading }) {
 }
 
 const Section = styled.div`
-  margin: 0 auto;
+  width: 100%;
   margin-bottom: 40px;
   display: block;
-`;
 
-//
+  & > button {
+    margin: 5px 0px 0px 0px;
+  }
+`;
 
 const Title = styled.div`
   width: 100%;
@@ -127,6 +129,8 @@ const T20 = styled.span`
   font-size: 20px;
   font-weight: 300;
   color: #4b5563;
+  text-align: center;
+  line-height: 1.15;
 `;
 
 const T18 = styled.span`

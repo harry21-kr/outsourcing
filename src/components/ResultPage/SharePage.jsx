@@ -75,7 +75,7 @@ export default function SharePage() {
       <Container>
         <Content>
           <Button variant="fill" onClick={handleLinkCopy}>
-            링 크 복사하기
+            결과 링크 복사하기
           </Button>
           <Button variant="fill" onClick={handleKakaoLink}>
             카카오톡 공유하기

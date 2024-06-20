@@ -30,19 +30,17 @@ export default function HomePageLayout() {
 }
 
 const T48b = styled.span`
-  font-family: 'Pretendard';
   font-size: 48px;
   font-weight: 800;
   color: #111827;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   line-height: 110%;
   letter-spacing: -2px;
 `;
 const T26 = styled.span`
   display: block;
-  font-family: 'Pretendard';
   font-size: 24px;
   font-weight: 500;
   color: #111827;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 `;
