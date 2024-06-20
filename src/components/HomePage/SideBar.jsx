@@ -36,15 +36,17 @@ const Overlay = styled.div`
 `;
 
 const SidebarContainer = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   right: ${(props) => (props.isOpen ? '0' : '-300px')};
   width: 300px;
-  height: 100%;
+  /* height: 100%; */
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  transition: right 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 1000;
+  height: 100vh;
+  /* overflow-y: auto; */
 `;
 
 const SidebarList = styled.ul`
