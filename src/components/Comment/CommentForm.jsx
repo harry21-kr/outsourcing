@@ -1,8 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { signInAnonymously } from '../../supabase/api/auth';
+import { SuccessIcon } from '../ResultPage/SharePage.style';
 import useCommentMutation from './hooks/mutation/useCommentMutation';
 
 export default function CommentForm({ session }) {
@@ -44,6 +46,12 @@ export default function CommentForm({ session }) {
       setNickname('');
       setComment('');
     }
+
+    toast.success('코멘트가 등록되었습니다 :)', {
+      position: 'top-center',
+      icon: <SuccessIcon />,
+      progressClassName: 'Toastify__progress-bar--success'
+    });
   }
 
   return (
