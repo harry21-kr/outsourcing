@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import SkeletonBar from '../../assets/styles/skeleton/Bar';
-import SkeletonCircle from '../../assets/styles/skeleton/Circle';
 import { useState } from 'react';
+import styled from 'styled-components';
+import SkeletonBar from '../common/ui/Bar';
+import SkeletonCircle from '../common/ui/Circle';
 // 탑3 전체 영역
 const JobPositionTableWrap = styled.div`
   width: 100%;
@@ -30,6 +30,9 @@ const JobItem = styled.li`
   flex-wrap: wrap;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
+
+  font-size: 20px;
+
   &:last-child {
     border-bottom: none;
   }

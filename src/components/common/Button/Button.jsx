@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import "../../asset/font/pretendardvariable.css";
+import '../../../asset/font/pretendardvariable.css';
 
 const Button = forwardRef(
   (
@@ -39,47 +39,59 @@ const baseStyles = css`
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  border-radius: 18px;
-  font-size: 24px;
+  border-radius: 16px;
   font-family: 'Pretendard';
   font-weight: 600;
-  color: #5A6AFB; /* 글자 색상 변경 */
-  border: 2px solid #8b97ff;
+  color: #5a6afb;
+  border: 1px solid #8b97ff;
   transition: 0.15s ease-in-out;
+  max-width: 520px;
+  min-width: 380px;
+  cursor: pointer;
+  margin: 5px;
 `;
 
 const variantStyles = {
   default: css`
     background-color: var(--color-secondary);
-    color: #5A6AFB; /* 글자 색상 변경 */
+    font-size: 22px;
+    color: #5a6afb; /* 글자 색상 변경 */
     border: 2px solid #8b97ff;
+    height: 66px;
     font-weight: bold;
     &:hover {
       background-color: #dadeff;
     }
   `,
   fill: css`
-      background-color: #5A6AFB;
-      border: none;
+    background-color: #5a6afb;
+    height: 66px;
+    font-size: 22px;
+    border: none;
     color: #ffffff;
     &:hover {
       background-color: #4956cb;
-
-
+    }
+  `,
+  choice: css`
+    background-color: #ffffff;
+    height: 60px;
+    color: #5a6afb;
+    padding-left: 40px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    &:hover {
+      background-color: #dadeff;
     }
   `
 };
 
 const sizeStyles = {
   default: css`
-    height: 76px;
-    width: 520px;
+    width: 100%;
     padding: 10px 24px;
-  `,
-  medium: css`
-    height: 48px;
-    padding: 12px 24px;
-    font-size: 15px;
   `
 };
 

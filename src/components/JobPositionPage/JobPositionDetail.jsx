@@ -2,48 +2,31 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { JOB_POSITION } from '../../constants';
-import VideoDisplay from './VideoDisplay';
+import Comment from '../Comment/Comment';
+import VideoDisplay from '../common/VideoDisplay';
 
 export default function JobPositionDetail() {
   const params = useParams();
 
-  const { title, highlight, summary, detail, imgUrl, videoId } = useMemo(
+  const { title, highlight, detail, imgUrl, videoId } = useMemo(
     () => JOB_POSITION.filter((v) => v.position === params.position)[0],
     [params.position]
   );
 
   return (
-    <Wrap>
+    <>
       <TitleText>{title}</TitleText>
       <HighlightText>{highlight}</HighlightText>
       <PositionImage src={imgUrl} width={412} height={410} />
-      <SummaryText>{summary}</SummaryText>
       <DetailText>{detail}</DetailText>
       <PositionVideoText>영상으로 보는 직업</PositionVideoText>
       <PositionVideoWrapper>
         <VideoDisplay videoId={videoId} width="100%" height="285px" />
       </PositionVideoWrapper>
-    </Wrap>
+      <Comment />
+    </>
   );
 }
-
-const Wrap = styled.main`
-  width: 100%;
-  min-width: 375px;
-  max-width: 600px;
-  min-height: calc(100vh - 50px);
-
-  margin: 25px auto;
-  padding: 40px;
-  border-radius: 30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background: white;
-  filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.12));
-`;
 
 const TitleText = styled.h1`
   font-size: 62px;
@@ -59,19 +42,13 @@ const HighlightText = styled.h2`
   margin-bottom: 70px;
 `;
 
-const SummaryText = styled.h3`
-  width: 100%;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: start;
-
-  margin-bottom: 14px;
-`;
-
 const DetailText = styled.p`
   width: 100%;
   font-size: 20px;
+  line-height: 1.2;
   color: #4b5563;
+
+  text-align: center;
 
   margin-bottom: 70px;
 `;
@@ -95,7 +72,5 @@ const PositionVideoWrapper = styled.div`
 `;
 
 const PositionImage = styled.img`
-  background: black;
-
   margin-bottom: 80px;
 `;

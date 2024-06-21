@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function JobPositionItem({ item }) {
-  const { title, label, summary, position } = item;
+  const { title, label, highlight, position, imgUrl } = item;
 
   const navigate = useNavigate();
 
@@ -12,11 +12,11 @@ export default function JobPositionItem({ item }) {
 
   return (
     <ItemWrapper onClick={handleMoveDetailPage}>
-      <img width={120} height={120} alt="사진" style={{ background: 'black' }} />
+      <img src={imgUrl} width={120} height={120} alt="사진" />
       <ItemTextWrapper>
         <ItemLabelText>{label}</ItemLabelText>
         <ItemTitleText>{title}</ItemTitleText>
-        <ItemSummaryText>{summary}</ItemSummaryText>
+        <ItemSummaryText>{highlight}</ItemSummaryText>
       </ItemTextWrapper>
     </ItemWrapper>
   );
