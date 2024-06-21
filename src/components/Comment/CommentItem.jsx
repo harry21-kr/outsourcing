@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
+import { SuccessIcon } from '../ResultPage/SharePage.style';
 import useCommentMutation from './hooks/mutation/useCommentMutation';
 
 export default function CommentItem({ commentItem, session }) {
@@ -12,11 +14,21 @@ export default function CommentItem({ commentItem, session }) {
 
   async function handleEditComment() {
     await editComment({ id, comment: editedComment });
+    toast.success('수정이 완료되었습니다 :)', {
+      position: 'top-center',
+      icon: <SuccessIcon />,
+      progressClassName: 'Toastify__progress-bar--success'
+    });
     setIsEditMode(false);
   }
 
   async function handleDeleteComment() {
     await removeComment({ id });
+    toast.success('삭제가 완료되었습니다 :)', {
+      position: 'top-center',
+      icon: <SuccessIcon />,
+      progressClassName: 'Toastify__progress-bar--success'
+    });
   }
 
   return (
