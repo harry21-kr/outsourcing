@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Button } from '../common/Button';
 
 export default function JobPositionBanner() {
+  const navigate = useNavigate();
   return (
     <Wrap>
       <BannerText>
         <span>나에게 맞는 직군</span>을 알아보고 싶다면?
       </BannerText>
-      <BannerButton to="/survey">입사 테스트하기</BannerButton>
+      <BannerButton
+        variant="fill"
+        onClick={() => {
+          navigate('/survey');
+        }}
+      >
+        입사 테스트하기
+      </BannerButton>
     </Wrap>
   );
 }
@@ -37,22 +46,4 @@ const BannerText = styled.p`
   }
 `;
 
-const BannerButton = styled(Link)`
-  width: 100%;
-  max-width: 510px;
-  height: 76px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #5a6afb;
-  border-radius: 17px;
-
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-
-  filter: drop-shadow(0px 8px 22px rgb(90, 138, 251));
-`;
+const BannerButton = styled(Button)``;

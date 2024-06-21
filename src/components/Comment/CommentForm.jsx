@@ -95,7 +95,7 @@ const NicknameInput = styled.input`
   height: 56px;
   padding: 0px 30px;
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid #d7d7d7;
   border-radius: 14px;
 
   font-size: 20px;
@@ -103,7 +103,7 @@ const NicknameInput = styled.input`
   outline: none;
 
   &::placeholder {
-    color: #dedede;
+    color: #c5c5c5;
   }
 `;
 
@@ -111,7 +111,7 @@ const CommentTextarea = styled.textarea`
   height: 120px;
   padding: 24px 30px;
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid #d7d7d7;
   border-radius: 14px;
 
   font-size: 20px;
@@ -119,7 +119,7 @@ const CommentTextarea = styled.textarea`
   outline: none;
 
   &::placeholder {
-    color: #dedede;
+    color: #c5c5c5;
   }
 `;
 
