@@ -160,7 +160,7 @@ const Question = styled.h2`
 const Options = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 8px;
   width: 100%;
 `;
 
